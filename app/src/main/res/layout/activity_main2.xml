@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="设置" />
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_setting_remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftText="备注" />
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_setting_Authority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftColor="@color/colorIcon"
+        app:bar_leftText="动态权限" />
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_setting_not_let"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="不让TA看我">
+
+        <com.kingbird.myapplicationtest.widget.SwitchButton
+            android:id="@+id/sb_setting_switch_not_let"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginHorizontal="15dp" />
+
+    </com.kingbird.myapplicationtest.widget.SettingBar>
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_setting_let"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="不看TA">
+
+        <com.kingbird.myapplicationtest.widget.SwitchButton
+            android:id="@+id/sb_setting_switch_let"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginHorizontal="15dp" />
+
+    </com.kingbird.myapplicationtest.widget.SettingBar>
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_setting_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftColor="@color/colorIcon"
+        app:bar_leftText="其他设置" />
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_do_not_disturb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="消息免打扰">
+
+        <com.kingbird.myapplicationtest.widget.SwitchButton
+            android:id="@+id/sb_switch_do_not_disturb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginHorizontal="15dp" />
+
+    </com.kingbird.myapplicationtest.widget.SettingBar>
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_block_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="屏蔽TA的消息">
+
+        <com.kingbird.myapplicationtest.widget.SwitchButton
+            android:id="@+id/sb_switch_block_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginHorizontal="15dp" />
+
+    </com.kingbird.myapplicationtest.widget.SettingBar>
+
+    <com.kingbird.myapplicationtest.widget.SettingBar
+        android:id="@+id/sb_setting_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftText="聊天消息"
+        app:bar_rightIcon="@drawable/arrows_right_ic" />
+</LinearLayout>
