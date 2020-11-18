@@ -18,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
         android:text="充值金额"
         android:textColor="@color/black80"
         android:textSize="16sp"
@@ -27,12 +28,13 @@
 
     <EditText
         android:id="@+id/et_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:hint="1元起充"
-        android:paddingStart="5dp"
+        android:background="@drawable/bg_money_et"
+        android:paddingStart="12dp"
         android:textColorHint="@color/colorIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_money" />
@@ -41,7 +43,8 @@
         android:id="@+id/withdraw_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
         android:text="充值方式"
         android:textColor="@color/black80"
         android:layout_marginStart="16dp"
@@ -53,7 +56,7 @@
         android:id="@+id/iv_alipay"
         android:src="@mipmap/alipay"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/withdraw_to"
         android:layout_width="wrap_content"
@@ -62,6 +65,7 @@
     <TextView
         android:id="@+id/alipay"
         android:text="支付宝"
+        android:textStyle="bold"
         android:textColor="@color/black80"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/iv_alipay"
@@ -73,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
-        android:checked="true"
+        android:checked="false"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/iv_alipay"
@@ -83,7 +87,7 @@
         android:id="@+id/iv_weChat"
         android:src="@mipmap/wechat"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_alipay"
         android:layout_width="wrap_content"
@@ -92,6 +96,7 @@
     <TextView
         android:id="@+id/weChat"
         android:text="微信"
+        android:textStyle="bold"
         android:textColor="@color/black80"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/iv_weChat"
@@ -108,5 +113,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/iv_weChat"
         app:buttonCompat="@drawable/checkbox_selector" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/bg_money"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/recharge"
+            android:background="@drawable/bg_botton_recharge"
+            android:text="充值"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="240dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:rightColor="#2C69F3"
+        app:rightSize="14sp"
+        app:titleStyle="bold"
+        app:titleSize="16sp"
         app:rightTitle="提现记录"
         app:title="提现" />
 
@@ -21,21 +24,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="余额"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="@color/black80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titlebar" />
 
     <ImageView
+        android:id="@+id/tv_alipay"
         android:src="@mipmap/alipay"
         android:layout_marginTop="20dp"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/titlebar"
-        app:layout_constraintEnd_toStartOf="@id/tv_over"
-        app:layout_constraintStart_toEndOf="@id/over"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="146dp"
+        android:layout_height="40dp"/>
 
     <TextView
         android:id="@+id/tv_over"
@@ -54,7 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
         android:text="提现金额"
         android:textColor="@color/black80"
         android:textSize="16sp"
@@ -63,29 +70,35 @@
 
     <EditText
         android:id="@+id/et_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:hint="请输入提现金额"
-        android:paddingStart="5dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_money_et"
+        android:hint="请输入转出礼物的金额"
+        android:paddingStart="12dp"
+        android:textSize="14sp"
         android:textColorHint="@color/colorIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_money" />
 
     <androidx.appcompat.widget.AppCompatButton
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_money"
-        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/et_money"
+        android:layout_width="116dp"
         android:layout_marginEnd="16dp"
-        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_botton_recharge"
+        android:layout_height="40dp"
         android:text="全部转出" />
 
     <TextView
         android:id="@+id/withdrawal_conditions"
         android:text="提现条件"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:textColor="@color/black80"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="42dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_money"
@@ -96,7 +109,7 @@
         android:id="@+id/conditions"
         android:text="1、礼物金额满10元"
         android:textColor="@color/black80"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="13dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/withdrawal_conditions"
@@ -122,6 +135,17 @@
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/conditions2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/conditions3"
+        android:id="@+id/gift_note"
+        android:textColor="#BEC4C6"
+        android:layout_marginTop="16dp"
+        android:text="*礼物提现平台需扣取一部分技术服务费"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

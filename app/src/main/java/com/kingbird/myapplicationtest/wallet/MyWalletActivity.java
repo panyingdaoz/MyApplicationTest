@@ -1,18 +1,17 @@
 package com.kingbird.myapplicationtest.wallet;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kingbird.myapplicationtest.R;
+import com.kingbird.myapplicationtest.RechargeActivity;
 import com.kingbird.myapplicationtest.RecyclerViewListDemoAdapter;
-import com.kingbird.myapplicationtest.TransactionAdapter;
 import com.kingbird.myapplicationtest.TransactionBean;
+import com.kingbird.myapplicationtest.WithdrawActivity;
+import com.kingbird.myapplicationtest.WithdrawGiftActivity;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
@@ -26,6 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -50,6 +52,9 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
     ImageView mCreditCard;
     @BindView(R.id.tv_recharge)
     TextView mRecharge;
+    @BindView(R.id.tv_withdraw)
+    TextView mWithdraw;
+    private int moneyState = 0;
 
     //    private TransactionAdapter mAdapter;
     private RecyclerViewListDemoAdapter mAdapter;
@@ -66,7 +71,7 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
 //        mRecyclerView=findViewById(R.id.rv_transaction_record);
 
         recyclerRefresh();
-
+        initData();
     }
 
     //适配数据
@@ -76,6 +81,8 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
         mWallet.setOnClickListener(this);
         mBankCard.setOnClickListener(this);
         mCreditCard.setOnClickListener(this);
+        mWithdraw.setOnClickListener(this);
+        mRecharge.setOnClickListener(this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new RecyclerViewListDemoAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
@@ -100,8 +107,11 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
                 refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
             }
         });
-        initData();
+//        initData();
 
+        mAdapter.setOnItemClickListener((adapterView, view, i, l) -> {
+            KLog.e("点击Item");
+        });
     }
 
     private void initData() {
@@ -134,6 +144,7 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.gift:
+                moneyState = 1;
                 mGift.setImageDrawable(getResources().getDrawable(R.mipmap.gift_selector));
                 mWallet.setImageDrawable(getResources().getDrawable(R.mipmap.wallet));
                 mBankCard.setImageDrawable(getResources().getDrawable(R.mipmap.bank_card));
@@ -141,6 +152,7 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
                 mRecharge.setVisibility(View.GONE);
                 break;
             case R.id.wallet:
+                moneyState = 0;
                 mRecharge.setVisibility(View.VISIBLE);
                 mGift.setImageDrawable(getResources().getDrawable(R.mipmap.gift));
                 mWallet.setImageDrawable(getResources().getDrawable(R.mipmap.wallet_selector));
@@ -158,6 +170,19 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
                 mWallet.setImageDrawable(getResources().getDrawable(R.mipmap.wallet));
                 mBankCard.setImageDrawable(getResources().getDrawable(R.mipmap.bank_card));
                 mCreditCard.setImageDrawable(getResources().getDrawable(R.mipmap.credit_card));
+                break;
+            case R.id.tv_withdraw:
+                Intent intent;
+                if (moneyState == 1) {
+                    intent = new Intent(MyWalletActivity.this, WithdrawGiftActivity.class);
+                } else {
+                    intent = new Intent(MyWalletActivity.this, WithdrawActivity.class);
+                }
+                startActivity(intent);
+                break;
+            case R.id.tv_recharge:
+                Intent intent1=new Intent(MyWalletActivity.this, RechargeActivity.class);
+                startActivity(intent1);
                 break;
             default:
         }

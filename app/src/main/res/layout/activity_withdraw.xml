@@ -11,18 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:rightSize="14sp"
+        app:titleSize="16sp"
+        app:titleStyle="bold"
         app:rightColor="#2C69F3"
         app:rightTitle="提现记录"
         app:title="提现" />
-
 
     <TextView
         android:id="@+id/over"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="余额"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="@color/black80"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +35,7 @@
         android:id="@+id/tv_over"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
         android:text="￥200.00"
@@ -45,8 +48,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:text="提现金额"
+        android:textStyle="bold"
         android:textColor="@color/black80"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,12 +58,13 @@
 
     <EditText
         android:id="@+id/et_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="188dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:hint="请输入提现金额"
-        android:paddingStart="5dp"
+        android:paddingStart="12dp"
+        android:background="@drawable/bg_money_et"
         android:textColorHint="@color/colorIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_money" />
@@ -70,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="提现到"
+        android:textStyle="bold"
         android:textColor="@color/black80"
         android:layout_marginStart="16dp"
         android:textSize="16sp"
@@ -80,11 +86,12 @@
         android:id="@+id/iv_alipay"
         android:src="@mipmap/alipay"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/withdraw_to"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/alipay"
@@ -111,7 +118,7 @@
         android:id="@+id/iv_weChat"
         android:src="@mipmap/wechat"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_alipay"
         android:layout_width="wrap_content"
@@ -144,6 +151,8 @@
         android:textColor="@color/black80"
         android:layout_marginTop="50dp"
         android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_weChat"
         android:layout_width="wrap_content"
@@ -170,4 +179,19 @@
         app:layout_constraintTop_toBottomOf="@id/conditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="@drawable/bg_money"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:background="@drawable/bg_botton_recharge"
+            android:text="申请提现"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="240dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

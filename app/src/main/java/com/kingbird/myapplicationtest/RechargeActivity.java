@@ -2,34 +2,31 @@ package com.kingbird.myapplicationtest;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.kingbird.myapplicationtest.dialog.SweetAlertDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * @author Administrator
  */
-public class WithdrawActivity extends AppCompatActivity implements View.OnClickListener {
+public class RechargeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.cb_alipay)
-    AppCompatCheckBox mAlipay;
-    @BindView(R.id.cb_wechat)
-    AppCompatCheckBox mWechat;
+    @BindView(R.id.recharge)
+    Button mRecharge;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_withdraw);
+        setContentView(R.layout.activity_recharge);
         ButterKnife.bind(this);
 
-        mAlipay.setOnClickListener(this);
-        mWechat.setOnClickListener(this);
+        mRecharge.setOnClickListener(this);
     }
 
     @Override

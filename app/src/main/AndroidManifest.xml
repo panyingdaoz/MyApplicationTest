@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditInformationActivity"></activity>
-        <!-- <activity android:name=".WithdrawActivity"></activity> -->
-        <!-- <activity android:name=".wallet.MyWalletActivity"></activity> -->
+        <!--        <activity android:name=".EditInformationActivity">-->
+        <activity android:name=".WithdrawActivity" />
+        <activity android:name=".WithdrawGiftActivity" />
+        <activity android:name=".RechargeActivity" />
         <!-- <activity android:name=".MainActivity"> -->
-        <activity android:name=".TransactionDetailsActivity">
+        <!--        <activity android:name=".TransactionDetailsActivity">-->
+        <!--        <activity android:name=".WithdrawGiftActivity">-->
+        <activity android:name=".wallet.MyWalletActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -18,8 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 说明：
- *
+ * 说明：失败 * withdraw_sucess
  * @author :Pan Yingdao
  * @date : on 2020/11/17 0017 15:39:04
  */
