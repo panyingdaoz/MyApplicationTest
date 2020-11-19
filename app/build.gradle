@@ -54,5 +54,7 @@ dependencies {
     //弹窗框架
     implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 //    implementation 'com.github.cazaea:sweet-alert-dialog:1.0.0'
+    // 条件选择器
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
 
 }

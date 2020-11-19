@@ -2,6 +2,7 @@ package com.kingbird.myapplicationtest;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
@@ -28,7 +29,7 @@ public class WithdrawActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_withdraw);
         ButterKnife.bind(this);
 

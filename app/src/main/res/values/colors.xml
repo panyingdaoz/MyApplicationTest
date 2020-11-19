@@ -17,9 +17,13 @@
 
     <!-- 图标颜色 -->
     <color name="colorIcon">#7C7C7C</color>
+    <!-- 图标颜色 -->
+    <color name="information">#F1F8FA</color>
+    <color name="information_view">#C0C0C0</color>
 
     <!-- 红色 -->
     <color name="red">#FFFF0000</color>
+    <color name="submit">#2C69F3</color>
 
     <!-- 标签颜色 -->
     <color name="label1">#76C8FF</color>

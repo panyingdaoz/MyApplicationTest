@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditInformationActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_basic"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/information"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="基本资料"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_other"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/information"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="其他资料"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_label"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/information"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_signature">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="标签"
+            android:textColor="@color/black80"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="昵称"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_basic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="李静lily"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/nickname" />
+
+    <TextView
+        android:id="@+id/userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="ID号"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_nickname" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="5475474515"
+        android:textColor="#BEC4C6"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/userId" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="性别"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_userId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="女"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gender" />
+
+    <TextView
+        android:id="@+id/birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="生日"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_gender" />
+
+    <TextView
+        android:id="@+id/tv_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="1990-9-1"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/birthday" />
+
+    <TextView
+        android:id="@+id/emotion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="情感状态"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_other" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="单身"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/emotion" />
+
+    <TextView
+        android:id="@+id/hometown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="家乡"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_emotion" />
+
+    <TextView
+        android:id="@+id/tv_hometown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="北京"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hometown" />
+
+    <TextView
+        android:id="@+id/profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="职业"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_hometown" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="学生"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profession" />
+
+    <TextView
+        android:id="@+id/school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="学校"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_profession" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="清华大学"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/school" />
+
+    <TextView
+        android:id="@+id/hobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="兴趣爱好"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_school" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="滑板"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hobby" />
+
+    <TextView
+        android:id="@+id/ideal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="理想型"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_hobby" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="1米9"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ideal" />
+
+    <TextView
+        android:id="@+id/signature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="个性签名"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_ideal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="这是我的个性签名"
+        android:textColor="@color/black80"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/signature" />
+
+    <View
+        android:id="@+id/view_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/nickname" />
+
+    <View
+        android:id="@+id/view_userId"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/userId" />
+
+    <View
+        android:id="@+id/view_gender"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/gender" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information"
+        app:layout_constraintTop_toBottomOf="@id/birthday" />
+
+    <View
+        android:id="@+id/view_emotion"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/emotion" />
+
+    <View
+        android:id="@+id/view_hometown"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/hometown" />
+
+    <View
+        android:id="@+id/view_profession"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/profession" />
+
+    <View
+        android:id="@+id/view_school"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/school" />
+
+    <View
+        android:id="@+id/view_hobby"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/hobby" />
+
+    <View
+        android:id="@+id/view_ideal"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information_view"
+        app:layout_constraintTop_toBottomOf="@id/ideal" />
+
+    <View
+        android:id="@+id/view_signature"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/information"
+        app:layout_constraintTop_toBottomOf="@id/signature" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
