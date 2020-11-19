@@ -5,6 +5,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -15,6 +19,8 @@ public class WithdrawGiftActivity extends AppCompatActivity implements View.OnCl
 
     @BindView(R.id.tv_alipay)
     ImageView mAlipay;
+    @BindView(R.id.titlebar)
+    TitleBar mTitleBar;
 
     boolean flag = false;
 
@@ -26,6 +32,23 @@ public class WithdrawGiftActivity extends AppCompatActivity implements View.OnCl
         ButterKnife.bind(this);
 
         mAlipay.setOnClickListener(this);
+
+        mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+            @Override
+            public void onLeftClick(View v) {
+                finish();
+            }
+
+            @Override
+            public void onTitleClick(View v) {
+
+            }
+
+            @Override
+            public void onRightClick(View v) {
+
+            }
+        });
     }
 
     @Override

@@ -13,10 +13,11 @@
         <activity android:name=".WithdrawActivity" />
         <activity android:name=".WithdrawGiftActivity" />
         <activity android:name=".RechargeActivity" />
+        <activity android:name=".TransactionDetailsActivity" />
         <!-- <activity android:name=".MainActivity"> -->
         <!--        <activity android:name=".TransactionDetailsActivity">-->
         <!--        <activity android:name=".WithdrawGiftActivity">-->
-        <activity android:name=".wallet.MyWalletActivity">
+        <activity android:name=".EditInformationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

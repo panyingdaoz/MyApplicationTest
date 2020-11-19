@@ -127,6 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
         android:text="生日"
         android:textColor="@color/black80"
@@ -135,15 +136,27 @@
         app:layout_constraintTop_toBottomOf="@id/gender" />
 
     <TextView
+        android:id="@+id/tv_birthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:text="1990-9-1"
         android:textColor="@color/black80"
         android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@id/birthday"
         app:layout_constraintTop_toTopOf="@id/birthday" />
 
+<!--    <com.xuexiang.xui.widget.alpha.XUIAlphaButton-->
+<!--        android:id="@+id/btn_date_bottom"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:background="@color/white"-->
+<!--        app:layout_constraintStart_toEndOf="@id/birthday"-->
+<!--        app:layout_constraintTop_toTopOf="@id/birthday"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="1990-9-1" />-->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

@@ -3,6 +3,8 @@ package com.kingbird.myapplicationtest;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
 import com.kingbird.myapplicationtest.dialog.SweetAlertDialog;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,8 @@ public class WithdrawActivity extends AppCompatActivity implements View.OnClickL
     AppCompatCheckBox mAlipay;
     @BindView(R.id.cb_wechat)
     AppCompatCheckBox mWechat;
+    @BindView(R.id.titlebar)
+    TitleBar mTitleBar;
 
 
     @Override
@@ -30,6 +34,22 @@ public class WithdrawActivity extends AppCompatActivity implements View.OnClickL
 
         mAlipay.setOnClickListener(this);
         mWechat.setOnClickListener(this);
+        mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+            @Override
+            public void onLeftClick(View v) {
+                finish();
+            }
+
+            @Override
+            public void onTitleClick(View v) {
+
+            }
+
+            @Override
+            public void onRightClick(View v) {
+
+            }
+        });
     }
 
     @Override

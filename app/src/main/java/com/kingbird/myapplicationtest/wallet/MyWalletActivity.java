@@ -1,26 +1,26 @@
 package com.kingbird.myapplicationtest.wallet;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
 import com.kingbird.myapplicationtest.R;
 import com.kingbird.myapplicationtest.RechargeActivity;
 import com.kingbird.myapplicationtest.RecyclerViewListDemoAdapter;
 import com.kingbird.myapplicationtest.TransactionBean;
+import com.kingbird.myapplicationtest.TransactionDetailsActivity;
 import com.kingbird.myapplicationtest.WithdrawActivity;
 import com.kingbird.myapplicationtest.WithdrawGiftActivity;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
-import com.scwang.smart.refresh.layout.api.RefreshLayout;
-import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 import com.socks.library.KLog;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,7 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -54,17 +55,21 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
     TextView mRecharge;
     @BindView(R.id.tv_withdraw)
     TextView mWithdraw;
+    @BindView(R.id.titlebar)
+    TitleBar mTitleBar;
     private int moneyState = 0;
 
-    //    private TransactionAdapter mAdapter;
     private RecyclerViewListDemoAdapter mAdapter;
 
-    //要设置的数据
+    /**
+     *  要设置的数据
+     */
     private List<TransactionBean> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_my_wallet);
         ButterKnife.bind(this);
 //        mRefreshLayout=findViewById(R.id.refreshLayout);
@@ -76,7 +81,6 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
 
     //适配数据
     private void recyclerRefresh() {
-//        mAdapter = new TransactionAdapter(this, data);
         mGift.setOnClickListener(this);
         mWallet.setOnClickListener(this);
         mBankCard.setOnClickListener(this);
@@ -92,26 +96,44 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
         //上拉加载
         mRefreshLayout.setRefreshFooter(new ClassicsFooter(this));
         //为下拉刷新添加事件
-        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NotNull RefreshLayout refreshlayout) {
-                initData();
-                refreshlayout.finishRefresh(true/*,false*/);//传入false表示刷新失败
-            }
+        mRefreshLayout.setOnRefreshListener(refreshlayout -> {
+            initData();
+            //传入false表示刷新失败
+            refreshlayout.finishRefresh(true/*,false*/);
         });
         //为上拉下载添加事件
-        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+        mRefreshLayout.setOnLoadMoreListener(refreshlayout -> {
+            initData();
+            //传入false表示加载失败
+            refreshlayout.finishLoadMore(2000/*,false*/);
+        });
+        mAdapter.setOnItemClickListener((position, data) -> {
+            KLog.e("点击下标：" + position);
+            TransactionBean transactionBean = new TransactionBean(data.get(position).getTransactionType(),
+                    data.get(position).getTransactionTypeTime(), data.get(position).getTransactionSum());
+
+            Intent intent = new Intent(MyWalletActivity.this, TransactionDetailsActivity.class);
+            intent.putExtra("transactionBean", transactionBean);
+            startActivity(intent);
+        });
+
+        mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
             @Override
-            public void onLoadMore(@NotNull RefreshLayout refreshlayout) {
-                initData();
-                refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
+            public void onLeftClick(View v) {
+                finish();
+            }
+
+            @Override
+            public void onTitleClick(View v) {
+
+            }
+
+            @Override
+            public void onRightClick(View v) {
+
             }
         });
-//        initData();
 
-        mAdapter.setOnItemClickListener((adapterView, view, i, l) -> {
-            KLog.e("点击Item");
-        });
     }
 
     private void initData() {
@@ -140,6 +162,7 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
         mAdapter.addData(data);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -181,10 +204,11 @@ public class MyWalletActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 break;
             case R.id.tv_recharge:
-                Intent intent1=new Intent(MyWalletActivity.this, RechargeActivity.class);
+                Intent intent1 = new Intent(MyWalletActivity.this, RechargeActivity.class);
                 startActivity(intent1);
                 break;
             default:
         }
     }
+
 }

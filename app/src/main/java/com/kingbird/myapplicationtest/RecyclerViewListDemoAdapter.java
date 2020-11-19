@@ -4,10 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.socks.library.KLog;
@@ -30,13 +30,13 @@ public class RecyclerViewListDemoAdapter extends RecyclerView.Adapter<RecyclerVi
 
     private Context context;
 
-    private AdapterView.OnItemClickListener onItemClickListener;
+    private OnItemClickListener onItemClickListener;
 
     public RecyclerViewListDemoAdapter(Context context) {
         this.context = context;
     }
 
-    public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
@@ -85,13 +85,13 @@ public class RecyclerViewListDemoAdapter extends RecyclerView.Adapter<RecyclerVi
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewListDemoAdapter.ListViewHolder holder, final int position) {
         TransactionBean entity = data.get(position);
-//        holder.transactionType.setText(entity.getMsg());
-        //将绑定的布局设置点击事件
         KLog.e("加载数据："+entity.getTransactionType());
         holder.transactionType.setText(entity.getTransactionType());
         holder.transactionTypeTime.setText(entity.getTransactionTypeTime());
         holder.transactionSum.setText(entity.getTransactionSum());
 
+        holder.mConstraintLayout.setOnClickListener(v ->
+                onItemClickListener.onItemClick(position,data));
     }
 
     /**
@@ -113,11 +113,14 @@ public class RecyclerViewListDemoAdapter extends RecyclerView.Adapter<RecyclerVi
         TextView transactionTypeTime;
         @BindView(R.id.transaction_sum)
         TextView transactionSum;
+        @BindView(R.id.constraintLayout)
+        ConstraintLayout mConstraintLayout;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+
     }
 }
 

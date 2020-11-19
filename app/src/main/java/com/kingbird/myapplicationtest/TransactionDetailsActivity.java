@@ -2,11 +2,16 @@ package com.kingbird.myapplicationtest;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
 import com.kingbird.myapplicationtest.dialog.SweetAlertDialog;
+import com.socks.library.KLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,11 +21,45 @@ import butterknife.ButterKnife;
  */
 public class TransactionDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @BindView(R.id.transaction_name)
+    TextView mTransactionName;
+    @BindView(R.id.transaction_money)
+    TextView mTransactionMoney;
+    @BindView(R.id.titlebar)
+    TitleBar mTitleBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_transaction_details);
+        ButterKnife.bind(this);
 
+        TransactionBean bean = (TransactionBean) getIntent().getParcelableExtra("transactionBean");
+
+        if (bean!=null){
+            KLog.e("金额："+bean.getTransactionSum());
+            mTransactionName.setText(bean.getTransactionType());
+            mTransactionMoney.setText(bean.getTransactionSum());
+        }else {
+            KLog.e("接收数据为空");
+        }
+        mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+            @Override
+            public void onLeftClick(View v) {
+                finish();
+            }
+
+            @Override
+            public void onTitleClick(View v) {
+
+            }
+
+            @Override
+            public void onRightClick(View v) {
+
+            }
+        });
     }
 
     @Override
