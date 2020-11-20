@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MyApplicationTest</string>
+    <string name="app_name">临时项目</string>
+    <string name="information_title">编辑资料</string>
+    <string name="common_confirm">确认</string>
+    <string name="common_cancel">取消</string>
+    <string name="add_label">添加标签</string>
 </resources>

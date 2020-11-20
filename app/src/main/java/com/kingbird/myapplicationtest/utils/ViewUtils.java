@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.utils;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.DrawableContainer;

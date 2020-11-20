@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

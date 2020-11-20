@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.kingbird.myapplicationtest.R;
+import com.kingbird.myapplicationtest.bean.TransactionBean;
 
 import java.util.List;
 

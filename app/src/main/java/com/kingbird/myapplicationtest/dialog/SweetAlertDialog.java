@@ -27,7 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kingbird.myapplicationtest.R;
-import com.kingbird.myapplicationtest.ViewUtils;
+import com.kingbird.myapplicationtest.utils.ViewUtils;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.List;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditInformationActivity">
+    tools:context=".activity.EditInformationActivity">
 
     <LinearLayout
         android:id="@+id/layout_basic"
@@ -48,6 +48,7 @@
         android:id="@+id/layout_label"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:orientation="horizontal"
         android:background="@color/information"
         android:gravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +62,13 @@
             android:textColor="@color/black80"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="长按移除标签"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <TextView
@@ -68,8 +76,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="昵称"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -77,11 +85,12 @@
         app:layout_constraintTop_toBottomOf="@id/layout_basic" />
 
     <TextView
+        android:id="@+id/tv_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="李静lily"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -93,8 +102,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="ID号"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -105,8 +114,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="5475474515"
         android:textColor="#BEC4C6"
         android:textStyle="bold"
@@ -118,8 +127,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="性别"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -127,11 +136,12 @@
         app:layout_constraintTop_toBottomOf="@id/view_userId" />
 
     <TextView
+        android:id="@+id/tv_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="女"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -143,8 +153,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="生日"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -156,8 +166,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="1990-9-1"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -170,8 +180,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="情感状态"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -179,11 +189,12 @@
         app:layout_constraintTop_toBottomOf="@id/layout_other" />
 
     <TextView
+        android:id="@+id/tv_emotion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="单身"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -195,8 +206,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="家乡"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -208,8 +219,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="北京"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -221,8 +232,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="职业"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -230,11 +241,12 @@
         app:layout_constraintTop_toBottomOf="@id/view_hometown" />
 
     <TextView
+        android:id="@+id/tv_profession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="学生"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -246,8 +258,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="学校"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -255,11 +267,12 @@
         app:layout_constraintTop_toBottomOf="@id/view_profession" />
 
     <TextView
+        android:id="@+id/tv_school"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="清华大学"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -271,8 +284,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="兴趣爱好"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -280,11 +293,12 @@
         app:layout_constraintTop_toBottomOf="@id/view_school" />
 
     <TextView
+        android:id="@+id/tv_hobby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="滑板"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -296,8 +310,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="理想型"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -305,11 +319,12 @@
         app:layout_constraintTop_toBottomOf="@id/view_hobby" />
 
     <TextView
+        android:id="@+id/tv_ideal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="1米9"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -321,8 +336,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="个性签名"
         android:textColor="@color/black80"
         android:textStyle="bold"
@@ -330,16 +345,63 @@
         app:layout_constraintTop_toBottomOf="@id/view_ideal" />
 
     <TextView
+        android:id="@+id/tv_signature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
-        android:paddingBottom="21dp"
         android:paddingTop="21dp"
+        android:paddingBottom="21dp"
         android:text="这是我的个性签名"
         android:textColor="@color/black80"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/signature" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="30dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_label">
+
+<!--        <com.jet.flowtaglayout.FlowTagLayout-->
+        <com.kingbird.myapplicationtest.view.FlowTagLayout
+            android:id="@+id/flowTagLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:item_background="@drawable/bg_withdraw"
+            app:item_bottomMargin="8dp"
+            app:item_bottomPadding="6dp"
+            app:item_leftMargin="8dp"
+            app:item_leftPadding="12dp"
+            app:item_rightMargin="8dp"
+            app:item_rightPadding="12dp"
+            app:item_textColor="@color/white"
+            app:item_textSize="16sp"
+            app:item_topMargin="8dp"
+            app:item_topPadding="6dp" />
+
+<!--        <TextView-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:id="@+id/add_flow"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/bg_add_label"-->
+<!--            android:paddingStart="12dp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="14sp"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:paddingEnd="12dp"-->
+<!--            android:paddingBottom="8dp"-->
+<!--            android:text="添加标签" />-->
+
+    </LinearLayout>
 
     <View
         android:id="@+id/view_nickname"

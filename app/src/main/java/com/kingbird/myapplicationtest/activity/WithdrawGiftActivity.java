@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
+import com.kingbird.myapplicationtest.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

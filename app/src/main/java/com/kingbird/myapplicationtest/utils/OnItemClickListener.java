@@ -1,4 +1,6 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.utils;
+
+import com.kingbird.myapplicationtest.bean.TransactionBean;
 
 import java.util.List;
 

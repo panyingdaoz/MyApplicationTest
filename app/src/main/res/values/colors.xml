@@ -17,9 +17,17 @@
 
     <!-- 图标颜色 -->
     <color name="colorIcon">#7C7C7C</color>
-    <!-- 图标颜色 -->
+    <!-- 编辑资料 -->
     <color name="information">#F1F8FA</color>
     <color name="information_view">#C0C0C0</color>
+    <!-- 分割线的颜色 -->
+    <color name="colorLine">#ECECEC</color>
+    <!-- 对话框确认按钮文本颜色 -->
+    <color name="colorConfirm">#007AFF</color>
+    <!-- 对话框取消按钮文本颜色 -->
+    <color name="colorCancel">#F44336</color>
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
 
     <!-- 红色 -->
     <color name="red">#FFFF0000</color>
@@ -29,4 +37,5 @@
     <color name="label1">#76C8FF</color>
     <color name="label2">#FF74B2</color>
     <color name="label3">#FF7B74</color>
+    <color name="add_label">#BEC4C6</color>
 </resources>

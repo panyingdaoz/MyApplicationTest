@@ -12,14 +12,14 @@
     <!-- 设置栏 -->
     <declare-styleable name="SettingBar">
         <!-- 左边 -->
-        <attr name="bar_leftText" format="string"/>
-        <attr name="bar_leftHint" format="string"/>
+        <attr name="bar_leftText" format="string" />
+        <attr name="bar_leftHint" format="string" />
         <attr name="bar_leftIcon" format="reference" />
         <attr name="bar_leftColor" format="color" />
         <attr name="bar_leftSize" format="dimension" />
         <!-- 右边 -->
         <attr name="bar_rightText" format="string" />
-        <attr name="bar_rightHint" format="string"/>
+        <attr name="bar_rightHint" format="string" />
         <attr name="bar_rightIcon" format="reference" />
         <attr name="bar_rightColor" format="color" />
         <attr name="bar_rightSize" format="dimension" />
@@ -28,6 +28,21 @@
         <attr name="bar_lineColor" format="reference|color" />
         <attr name="bar_lineSize" format="dimension" />
         <attr name="bar_lineMargin" format="dimension" />
+    </declare-styleable>
+
+    <!--    自定义标签-->
+    <declare-styleable name="FlowTagLayout">
+        <attr name="item_leftMargin" format="dimension" />
+        <attr name="item_rightMargin" format="dimension" />
+        <attr name="item_topMargin" format="dimension" />
+        <attr name="item_bottomMargin" format="dimension" />
+        <attr name="item_leftPadding" format="dimension" />
+        <attr name="item_rightPadding" format="dimension" />
+        <attr name="item_topPadding" format="dimension" />
+        <attr name="item_bottomPadding" format="dimension" />
+        <attr name="item_background" format="reference" />
+        <attr name="item_textSize" format="dimension" />
+        <attr name="item_textColor" format="color" />
     </declare-styleable>
 
 </resources>

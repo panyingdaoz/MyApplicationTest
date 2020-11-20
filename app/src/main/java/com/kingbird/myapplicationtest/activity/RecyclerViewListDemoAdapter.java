@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.activity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kingbird.myapplicationtest.utils.OnItemClickListener;
+import com.kingbird.myapplicationtest.R;
+import com.kingbird.myapplicationtest.bean.TransactionBean;
 import com.socks.library.KLog;
 
 import java.util.ArrayList;

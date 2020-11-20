@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('I:\\kbwork\\kingbirdKey.jks')
+            storePassword 'kingbird'
+            keyAlias 'key'
+            keyPassword 'kingbird'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -12,6 +20,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
@@ -30,6 +39,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.cardview:cardview:1.0.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -56,5 +66,12 @@ dependencies {
 //    implementation 'com.github.cazaea:sweet-alert-dialog:1.0.0'
     // 条件选择器
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    // 网络请求框架：
+    implementation 'com.tsy:myokhttp:1.1.4'
+    // OkHttp 框架：https://github.com/square/okhttp
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    // 标签
+//    implementation 'com.github.donkingliang:LabelsView:1.6.3'
+//    implementation 'com.jetlee:FlowTagLayout:1.0.1'
 
 }

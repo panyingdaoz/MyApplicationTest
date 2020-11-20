@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditInformationActivity">
+    tools:context=".activity.EditInformationActivity">
 
     <com.hjq.bar.TitleBar
         android:id="@+id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="编辑资料"
+        app:title="@string/information_title"
         app:titleColor="@color/black80"
         app:titleSize="16sp"
         app:titleStyle="bold" />

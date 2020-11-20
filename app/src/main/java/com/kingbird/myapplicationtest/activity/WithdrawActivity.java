@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.view.Window;
 
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
+import com.kingbird.myapplicationtest.R;
 import com.kingbird.myapplicationtest.dialog.SweetAlertDialog;
 
 import androidx.appcompat.app.AppCompatActivity;

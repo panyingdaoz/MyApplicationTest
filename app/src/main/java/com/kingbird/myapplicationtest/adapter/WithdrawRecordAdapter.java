@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import com.kingbird.myapplicationtest.R;
+import com.kingbird.myapplicationtest.bean.WithdrawRecordBean;
 import com.socks.library.KLog;
 
 import java.util.ArrayList;

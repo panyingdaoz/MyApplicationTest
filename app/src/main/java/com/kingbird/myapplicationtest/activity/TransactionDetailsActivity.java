@@ -1,4 +1,4 @@
-package com.kingbird.myapplicationtest;
+package com.kingbird.myapplicationtest.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,10 +6,11 @@ import android.view.Window;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatCheckBox;
 
 import com.hjq.bar.OnTitleBarListener;
 import com.hjq.bar.TitleBar;
+import com.kingbird.myapplicationtest.R;
+import com.kingbird.myapplicationtest.bean.TransactionBean;
 import com.kingbird.myapplicationtest.dialog.SweetAlertDialog;
 import com.socks.library.KLog;
 
