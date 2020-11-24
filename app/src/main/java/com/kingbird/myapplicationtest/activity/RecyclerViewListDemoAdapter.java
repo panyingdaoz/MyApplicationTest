@@ -6,18 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.kingbird.myapplicationtest.utils.OnItemClickListener;
 import com.kingbird.myapplicationtest.R;
+import com.kingbird.myapplicationtest.adapter.OnItemClickListener;
 import com.kingbird.myapplicationtest.bean.TransactionBean;
 import com.socks.library.KLog;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

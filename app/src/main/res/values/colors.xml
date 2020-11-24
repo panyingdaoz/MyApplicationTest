@@ -3,7 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-
+    <color name="gray">#999999</color>
 
     <!-- 白色 -->
     <color name="white">#FFFFFFFF</color>
@@ -14,6 +14,7 @@
     <color name="black65">#A6000000</color>
     <color name="black60">#99000000</color>
     <color name="black5">#0D000000</color>
+    <color name="black3e">#3E4141</color>
 
     <!-- 图标颜色 -->
     <color name="colorIcon">#7C7C7C</color>
@@ -28,6 +29,10 @@
     <color name="colorCancel">#F44336</color>
     <!-- 透明色 -->
     <color name="transparent">#00000000</color>
+    <!-- 使用指南字蓝色体色 -->
+    <color name="click_text">#2C69F3</color>
+    <!-- 背景色 -->
+    <color name="bg_info">#828282</color>
 
     <!-- 红色 -->
     <color name="red">#FFFF0000</color>
@@ -37,5 +42,8 @@
     <color name="label1">#76C8FF</color>
     <color name="label2">#FF74B2</color>
     <color name="label3">#FF7B74</color>
-    <color name="add_label">#BEC4C6</color>
+    <color name="label4">#38BC7A</color>
+    <color name="label5">#7568FF</color>
+    <color name="label6">#FFA459</color>
+    <color name="add_label">#CDD8DB</color>
 </resources>

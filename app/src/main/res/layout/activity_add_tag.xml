@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    tools:context=".activity.AddTagActivity">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backButton="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:leftColor="@color/black80"
+        app:leftSize="16sp"
+        app:leftTitle="颜色"
+        app:titleStyle="bold"
+        app:rightColor="@color/black80"
+        app:rightSize="16sp"
+        app:rightTitle="完成"
+        app:title="补充介绍"
+        app:titleColor="@color/black80"
+        app:titleSize="16sp" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/et_color"
+        android:layout_width="112dp"
+        android:textSize="12sp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="false"
+        android:background="@drawable/bg_money_et"
+        android:hint="请输入颜色"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlebar"
+        tools:ignore="Autofill,LabelFor,TextFields" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/et_brand"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="false"
+        android:textSize="12sp"
+        android:background="@drawable/bg_money_et"
+        android:layout_marginStart="30dp"
+        android:hint="请输入品牌"
+        app:layout_constraintStart_toEndOf="@+id/et_color"
+        app:layout_constraintTop_toBottomOf="@id/titlebar"
+        tools:ignore="Autofill,LabelFor,TextFields" />
+
+    <TextView
+        android:text="@string/tv_tag_caption"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/black3e"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_color"
+        android:id="@+id/tv_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/tv_tag_example"
+        android:textColor="@color/red"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_caption"
+        android:id="@+id/tv_caption_example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/black80"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_caption_example"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/historical_label"
+        android:text="@string/historical_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.kingbird.myapplicationtest.view.FlowTagLayout
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/historical_label"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/flowTagLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:item_background="@drawable/bg_add_label"
+        app:item_bottomMargin="5dp"
+        app:item_bottomPadding="3dp"
+        app:item_leftMargin="5dp"
+        app:item_leftPadding="10dp"
+        app:item_rightMargin="5dp"
+        app:item_rightPadding="10dp"
+        app:item_textColor="@color/black3e"
+        app:item_textSize="12sp"
+        app:item_topMargin="5dp"
+        app:item_topPadding="3dp" />
+
+    <TextView
+        android:text="颜色"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/flowTagLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tv_title_color"
+        android:textColor="@color/click_text"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="11dp"
+        android:background="@color/bg_info"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_color"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <View
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/click_text"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_color"
+        android:layout_width="30dp"
+        android:layout_height="3dp"/>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_color">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_label_view"
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

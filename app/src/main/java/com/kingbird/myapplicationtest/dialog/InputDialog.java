@@ -4,20 +4,23 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-
-import androidx.annotation.StringRes;
+import android.widget.Toast;
 
 import com.kingbird.myapplicationtest.R;
 import com.kingbird.myapplicationtest.aop.SingleClick;
 
+import androidx.annotation.StringRes;
+
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject
- *    time   : 2019/02/27
- *    desc   : 输入对话框
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/AndroidProject
+ * time   : 2019/02/27
+ * desc   : 输入对话框
  */
 public final class InputDialog {
+
+    private static Context mContext;
 
     public static final class Builder
             extends UIDialog.Builder<Builder>
@@ -30,6 +33,7 @@ public final class InputDialog {
             super(context);
             setCustomView(R.layout.input_dialog);
 
+            mContext = context;
             mInputView = findViewById(R.id.tv_input_message);
 
             addOnShowListener(this);
@@ -38,6 +42,7 @@ public final class InputDialog {
         public Builder setHint(@StringRes int id) {
             return setHint(getString(id));
         }
+
         public Builder setHint(CharSequence text) {
             mInputView.setHint(text);
             return this;
@@ -46,6 +51,7 @@ public final class InputDialog {
         public Builder setContent(@StringRes int id) {
             return setContent(getString(id));
         }
+
         public Builder setContent(CharSequence text) {
             mInputView.setText(text);
             int index = mInputView.getText().toString().length();
@@ -74,9 +80,14 @@ public final class InputDialog {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.tv_ui_confirm:
-                    autoDismiss();
-                    if (mListener != null) {
-                        mListener.onConfirm(getDialog(), mInputView.getText().toString());
+                    String text = mInputView.getText().toString();
+                    if (!text.isEmpty()) {
+                        autoDismiss();
+                        if (mListener != null) {
+                            mListener.onConfirm(getDialog(), text);
+                        }
+                    } else {
+                        Toast.makeText(mContext, "输入内容不能为空！", Toast.LENGTH_LONG).show();
                     }
                     break;
                 case R.id.tv_ui_cancel:
@@ -101,6 +112,7 @@ public final class InputDialog {
         /**
          * 点击取消时回调
          */
-        default void onCancel(BaseDialog dialog) {}
+        default void onCancel(BaseDialog dialog) {
+        }
     }
 }

@@ -4,4 +4,9 @@
     <string name="common_confirm">确认</string>
     <string name="common_cancel">取消</string>
     <string name="add_label">添加标签</string>
+    <string name="find_charm">魅力暴发户</string>
+    <string name="user_manual">越详细的标签越能让别人更容易搜索到你哦 《使用指南》</string>
+    <string name="tv_tag_caption">详细的标签 能让别人更容易搜索到你哟!</string>
+    <string name="tv_tag_example">示例：红色 阿迪达斯 运动T恤</string>
+    <string name="historical_label">历史标签</string>
 </resources>

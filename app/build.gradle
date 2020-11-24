@@ -73,5 +73,11 @@ dependencies {
     // 标签
 //    implementation 'com.github.donkingliang:LabelsView:1.6.3'
 //    implementation 'com.jetlee:FlowTagLayout:1.0.1'
+    // fresco
+//    implementation 'com.facebook.fresco:fresco:1.9.0'
+    // 图片加载框架：https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
 
 }

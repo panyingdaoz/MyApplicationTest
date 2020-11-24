@@ -11,12 +11,18 @@ import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.bigkoo.pickerview.view.TimePickerView;
+import com.hjq.bar.OnTitleBarListener;
+import com.hjq.bar.TitleBar;
 import com.kingbird.myapplicationtest.R;
 import com.kingbird.myapplicationtest.dialog.InputDialog;
 import com.kingbird.myapplicationtest.view.FlowTagLayout;
 import com.socks.library.KLog;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,10 +32,6 @@ import java.util.List;
 import java.util.Locale;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,8 +61,8 @@ public class EditInformationActivity extends AppCompatActivity implements View.O
     TextView mIdeal;
     @BindView(R.id.tv_signature)
     TextView mSignature;
-    //    @BindView(R.id.add_flow)
-//    TextView mAddFlow;
+    @BindView(R.id.titlebar)
+    TitleBar mTitleBar;
     @BindView(R.id.flowTagLayout)
     FlowTagLayout mFlowTagLayout;
 
@@ -81,6 +83,34 @@ public class EditInformationActivity extends AppCompatActivity implements View.O
         ButterKnife.bind(this);
 
         mMyOkhttp = new MyOkHttp();
+        initClickListener();
+        initLunarPicker();
+        initOptionPicker();
+        queryProvinces();
+        initFlowTag();
+
+        mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+            @Override
+            public void onLeftClick(View v) {
+                finish();
+            }
+
+            @Override
+            public void onTitleClick(View v) {
+
+            }
+
+            @Override
+            public void onRightClick(View v) {
+
+            }
+        });
+    }
+
+    /**
+     * 添加控件监听
+     */
+    private void initClickListener() {
         mNickname.setOnClickListener(this);
         mGender.setOnClickListener(this);
         mEmotion.setOnClickListener(this);
@@ -91,21 +121,21 @@ public class EditInformationActivity extends AppCompatActivity implements View.O
         mSignature.setOnClickListener(this);
         mHometown.setOnClickListener(this);
         mBirthday.setOnClickListener(this);
-        initLunarPicker();
-        initOptionPicker();
-        queryProvinces();
+    }
 
+    /**
+     * 标签初始化
+     */
+    private void initFlowTag() {
         label.add("猫奴");
-
         mFlowTagLayout.setItemBackGround(R.drawable.bg_label);
         mFlowTagLayout.addTags(label);
         mFlowTagLayout.setItemBackGround(R.drawable.bg_label2);
-//        mFlowTagLayout.addTag("猫奴");
         mFlowTagLayout.addTag("安静");
         mFlowTagLayout.setItemBackGround(R.drawable.bg_label3);
         mFlowTagLayout.addTag("努力");
+        mFlowTagLayout.setItemTextColor(1);
         mFlowTagLayout.setItemBackGround(R.drawable.bg_add_label);
-        mFlowTagLayout.setItemTextColor(R.color.text_white);
         mFlowTagLayout.addTag("添加标签");
 
         mFlowTagLayout.setTagClickListener(position -> {
@@ -114,13 +144,39 @@ public class EditInformationActivity extends AppCompatActivity implements View.O
                 new InputDialog.Builder(this)
                         .setTitle(getString(R.string.information_title))
                         .setListener((dialog, content) -> {
-                            int tagSize = mFlowTagLayout.getTagSize();
-                            KLog.e("当前标签大小：" + tagSize);
-                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label);
-                            if (tagSize > 0) {
-                                mFlowTagLayout.addTagOfIndex(tagSize-1, content);
-                            } else {
-                                mFlowTagLayout.addTagOfIndex(0, content);
+                            if (!content.isEmpty()) {
+                                int tagSize = mFlowTagLayout.getTagSize();
+                                KLog.e("当前标签大小：" + tagSize);
+//                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label);
+                                if (tagSize > 0 && tagSize < 7) {
+                                    int index = tagSize - 1;
+//                                KLog.e("当前下标："+index);
+                                    switch (index) {
+                                        case 0:
+                                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label);
+                                            break;
+                                        case 1:
+                                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label2);
+                                            break;
+                                        case 2:
+                                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label3);
+                                            break;
+                                        case 3:
+                                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label4);
+                                            break;
+                                        case 4:
+                                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label5);
+                                            break;
+                                        case 5:
+                                            mFlowTagLayout.setItemBackGround(R.drawable.bg_label6);
+                                            break;
+                                        default:
+                                    }
+                                    mFlowTagLayout.setItemTextColor(-1);
+                                    mFlowTagLayout.addTagOfIndex(index, content);
+                                } else {
+                                    KLog.e("最多只能添加6个标签");
+                                }
                             }
                         })
                         .show();
@@ -132,7 +188,9 @@ public class EditInformationActivity extends AppCompatActivity implements View.O
         });
         mFlowTagLayout.setTagLongClickListener(position -> {
             KLog.e("触发长按监听");
-            mFlowTagLayout.removeTagOfIndex(position);
+            if (!getString(R.string.add_label).equals(mFlowTagLayout.getTagText(position))) {
+                mFlowTagLayout.removeTagOfIndex(position);
+            }
         });
 
     }

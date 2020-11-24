@@ -7,7 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 
 import com.kingbird.myapplicationtest.R;
 import com.kingbird.myapplicationtest.utils.PxtoSpUtils;
+import com.socks.library.KLog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +37,8 @@ public class FlowTagLayout extends ViewGroup {
     private OnTagClickListener onTagClickListener;
     private OnTagLongClickListener onTagLongClickListener;
 
-    private int defaultColor = Color.parseColor("#666666");
+    private int defaultColor = Color.parseColor("#FFFFFFFF");
+//    private int defaultColor = Color.parseColor("#666666");
     private float defaultTextSize = PxtoSpUtils.spToPx(16);
 
     /****************** 自定义的Attribute *************************/
@@ -75,7 +76,11 @@ public class FlowTagLayout extends ViewGroup {
     }
 
     public void setItemTextColor(int color) {
-        textColor = color;
+        if (color>0){
+            textColor = Color.parseColor("#3E4141");;
+        }else {
+            textColor = color;
+        }
     }
 
     private void init(AttributeSet attrs) {
@@ -129,9 +134,9 @@ public class FlowTagLayout extends ViewGroup {
             MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
             // 判断是否换行（1.不是非限制  2.已用宽度+当前添加的child宽度+左右的padding 是否大于 父view自身测量的宽度）
             int paddingRight = getPaddingRight();
-            Log.e("20000", paddingRight + "：padding");
-            Log.e("20000", lp.leftMargin + "：margin");
-            Log.e("20000", child.getMeasuredWidth() + "：width");
+//            Log.e("20000", paddingRight + "：padding");
+//            Log.e("20000", lp.leftMargin + "：margin");
+//            Log.e("20000", child.getMeasuredWidth() + "：width");
             widthUsed = widthUsed + leftMargin;
             if (specWidthMode != MeasureSpec.UNSPECIFIED &&
                     widthUsed + child.getMeasuredWidth() + rightMargin + getPaddingRight() > specWidth) {

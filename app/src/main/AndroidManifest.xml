@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kingbird.myapplicationtest">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--        <activity android:name=".EditInformationActivity">-->
+        <activity android:name=".activity.AddTagActivity"/>
+        <activity android:name=".activity.SupplementActivity" />
+        <activity android:name=".activity.EditInformationActivity" />
         <activity android:name=".activity.WithdrawActivity" />
         <activity android:name=".activity.WithdrawGiftActivity" />
         <activity android:name=".activity.RechargeActivity" />
-        <activity android:name=".activity.TransactionDetailsActivity" />
-        <!-- <activity android:name=".MainActivity"> -->
-        <!--        <activity android:name=".TransactionDetailsActivity">-->
-        <!--        <activity android:name=".WithdrawGiftActivity">-->
-        <activity android:name=".activity.EditInformationActivity">
+        <activity android:name=".activity.TransactionDetailsActivity" /> <!-- <activity android:name=".MainActivity"> -->
+        <!-- <activity android:name=".TransactionDetailsActivity"> -->
+        <!-- <activity android:name=".WithdrawGiftActivity"> -->
+        <activity android:name=".activity.PersonalDataActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
